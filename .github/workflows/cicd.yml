@@ -18,7 +18,7 @@ jobs:
     name: 'setup-application-infra'
     container:
       image: hashicorp/terraform:1.8.2 
-    runs-on: runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     environment: ${{ github.event.inputs.app-environment }}
 
     steps:
