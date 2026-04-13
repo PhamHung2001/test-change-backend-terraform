@@ -41,6 +41,5 @@ jobs:
 
     - name: Terraform Apply
       if: github.event.inputs.action_type == 'apply'
-      working-directory: ./application-infra/applications/dev
       run: |
         terraform apply out.terraform
