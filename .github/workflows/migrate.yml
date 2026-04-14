@@ -45,7 +45,7 @@ jobs:
 
       - name: Re-init new backend
         run: |
-          terraform init -backend-config=backend-dev.hcl
+          terraform init -reconfigure -backend-config=backend-dev.hcl
 
       - name: Create dev workspace from backup state
         run: |
@@ -54,6 +54,7 @@ jobs:
             exit 1
           else
             terraform workspace new -state=backup-old-state.tfstate dev
+            terraform state push backup-old-state.tfstate
           fi
 
       - name: Show current workspace
