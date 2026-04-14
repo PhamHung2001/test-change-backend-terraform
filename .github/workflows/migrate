@@ -2,6 +2,17 @@ name: terraform-migrate-dev-workspace
 
 on:
   workflow_dispatch:
+    inputs: 
+      app-environment:
+        type: environment
+        description: Select the environment
+      action_type:
+        type: choice
+        description: type of action
+        options: 
+        - plan
+        - apply
+
 
 permissions:
   contents: read
