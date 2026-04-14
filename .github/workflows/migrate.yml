@@ -45,7 +45,7 @@ jobs:
 
       - name: Re-init new backend
         run: |
-          terraform init -migrate-state -force-copy -backend-config=backend-dev.hcl
+          terraform init -backend-config=backend-dev.hcl
 
       - name: Create dev workspace from backup state
         run: |
